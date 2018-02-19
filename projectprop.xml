@@ -1,0 +1,42 @@
+<properties>
+    <attributes name="appidkey" value="ScannerApp"/>
+    <attributes name="mwaddrkey" value="192.168.1.106"/>
+    <attributes name="iospopuptransitioncorrection" value="true"/>
+    <attributes name="isNewAppWithRespectToAndroidPackageName" value="true"/>
+    <attributes name="iphonebundleversionkey" value="1.0"/>
+    <attributes name="iosrespectimagesizecorrection" value="true"/>
+    <attributes name="ioscheckboxcorrection" value="true"/>
+    <attributes name="apppackagekey" value="com.orgname.ScannerApp"/>
+    <attributes name="winmangotiletitlekey" value="ScannerApp"/>
+    <attributes name="andtargetsdkkey" value="4.0 (14)"/>
+    <attributes name="win8displaynamekey" value="ScannerApp"/>
+    <attributes name="android_allowselfsignedcertificates" value="None"/>
+    <attributes name="iphonebundleidentifierkey" value="com.kony.ScannerApp"/>
+    <attributes name="appnamekey" value="ScannerApp"/>
+    <attributes name="currentgaversion" value="8.1.6.v201801231932"/>
+    <attributes name="appversionkey" value="1.0.0"/>
+    <attributes name="project.type" value="js"/>
+    <attributes name="sessionmanager" value="Http Session Manager"/>
+    <attributes name="vendornamekey" value="KonyLabs"/>
+    <attributes name="appversioncode" value="1"/>
+    <attributes name="createdgaversion" value="8.1.6"/>
+    <attributes name="isDpScaleFactor" value="true"/>
+    <attributes name="iostextboxpaddingcorrection" value="true"/>
+    <attributes name="win6xj2meonlysupported" value="false"/>
+    <attributes name="wp10displayname" value="ScannerApp"/>
+    <attributes name="referenceWidth" value="375"/>
+    <attributes name="build" value="debug"/>
+    <attributes name="studiovizproject" value="true"/>
+    <attributes name="marginsincludedinwidgetcontainerweight" value="true"/>
+    <attributes name="mwportkey" value="80"/>
+    <attributes name="mwhttpsportkey" value="443"/>
+    <attributes name="APPLICATION_THEME" value="default"/>
+    <attributes name="SELECTED_THEME" value="default"/>
+    <attributes name="lastmodifiedtime" value="0"/>
+    <attributes name="Server side mobile web" value="false"/>
+    <attributes name="cloud_url" value="https://app-factory-dev.konycloud.com"/>
+    <attributes name="cloud_env_name" value="SoftServe-App Factory Dev"/>
+    <attributes name="cloud_env_GUID" value="13a3f619-2156-49f0-a478-14a5ac801e27"/>
+    <attributes name="cloud_account_id" value="100007931"/>
+    <attributes name="cloud_account_guid" value="990b7119-9591-4481-a42a-75650efa137e"/>
+</properties>
