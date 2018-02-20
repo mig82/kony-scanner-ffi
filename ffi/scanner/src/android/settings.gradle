@@ -1,0 +1,1 @@
+include ':app', ':barcodescanner-release-2.1.5'
