@@ -14,7 +14,7 @@ public class ScannerWrapper {
 
     private static final String LOG_TAG = "ScannerWrapper";
 
-    public static void scan(Function paramFunction) {
+    public void scan(Function paramFunction) {
         Log.i(LOG_TAG, "1. Requesting scan");
 
         KonyMain localKonyMain = KonyMain.getActivityContext();

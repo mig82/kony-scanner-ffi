@@ -7,7 +7,6 @@
                     <mappings platformId="8">
                         <nativeMethod className="ScannerWrapper" frameworks="" library="" name="scan" packageName="" static="false">
                             <params dataType="com.konylabs.vm.Function" />
-                            <returnTypes>void</returnTypes>
                             <versionSpecificLibraries>
                                 <entry>
                                     <key>5.0</key>
@@ -22,7 +21,7 @@
                     <returnTypes>void</returnTypes>
                 </jsMethods>
                 <mappings platformId="8">
-                    <nativeClasses frameworks="" library="scanner.jar" name="ScannerWrapper" packageName="com.mig82.scanner">
+                    <nativeClasses frameworks="" library="scanner-ffi.aar" name="ScannerWrapper" packageName="com.mig82.scanner">
                         <constructors constructor="true" name="ScannerWrapper" static="true" />
                         <versionSpecificLibraries>
                             <entry>

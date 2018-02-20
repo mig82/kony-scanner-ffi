@@ -23,17 +23,15 @@ public class N_scanner extends JSLibrary {
     }
 
     public N_scanner() {}
-
+    
     public Object[] execute(int index, Object[] params) {
         // TODO Auto-generated method stub
         Object[] ret = null;
-
         int paramLen = params.length;
         int inc = 1;
         switch (index) {
             default: break;
         }
-
         return ret;
     }
 
@@ -41,15 +39,16 @@ public class N_scanner extends JSLibrary {
         // TODO Auto-generated method stub
         return methods;
     }
+    
     public String getNameSpace() {
         // TODO Auto-generated method stub
         return "scanner";
     }
 
-
     /*
      * return should be status(0 and !0),address
      */
+
     class Scanner extends JSLibrary {
 
         public static final String scan = "scan";
@@ -62,11 +61,9 @@ public class N_scanner extends JSLibrary {
             return new com.mig82.scanner.ScannerWrapper();
         }
 
-
         public Object[] execute(int index, Object[] params) {
             // TODO Auto-generated method stub
             Object[] ret = null;
-
             int paramLen = params.length;
             int inc = 1;
             switch (index) {
@@ -77,13 +74,11 @@ public class N_scanner extends JSLibrary {
                         };
                     }
                     inc = 1;
-
                     com.konylabs.vm.Function callback0 = null;
                     if (params[0 + inc] != null && params[0 + inc] != LuaNil.nil) {
                         callback0 = (com.konylabs.vm.Function) params[0 + inc];
                     }
                     ret = this.scan(params[0], callback0);
-
                     break;
                 default:
                     break;
@@ -95,6 +90,7 @@ public class N_scanner extends JSLibrary {
             // TODO Auto-generated method stub
             return methods;
         }
+
         public String getNameSpace() {
             // TODO Auto-generated method stub
             return "Scanner";
@@ -103,11 +99,10 @@ public class N_scanner extends JSLibrary {
         /*
          * return should be status(0 and !0),address
          */
-        public final Object[] scan(Object self, com.konylabs.vm.Function inputKey0) {
 
+        public final Object[] scan(Object self, com.konylabs.vm.Function inputKey0) {
             Object[] ret = null;
             ((com.mig82.scanner.ScannerWrapper) self).scan((com.konylabs.vm.Function) inputKey0);
-
             ret = new Object[] {
                 LuaNil.nil, new Double(0)
             };

@@ -38,6 +38,7 @@
     "displaytext": true,
     "focusskin": "s50c97b9c0f84a6d84bcee884abbe1dc",
     "id": "scanBtn",
+    "ide_onClick": "AS_Button_e33d6dbaaf9541a48dc465ff030f1a89",
     "info": null,
     "iscustomlayout": false,
     "isvisible": true,
