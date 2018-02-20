@@ -7,6 +7,9 @@
                     <mappings platformId="8">
                         <nativeMethod className="ScannerWrapper" frameworks="" library="" name="scan" packageName="" static="false">
                             <params dataType="com.konylabs.vm.Function" />
+                            <params dataType="com.konylabs.vm.Function" />
+                            <params dataType="com.konylabs.vm.Function" />
+                            <params dataType="java.lang.Object" />
                             <versionSpecificLibraries>
                                 <entry>
                                     <key>5.0</key>
@@ -17,7 +20,10 @@
                             </versionSpecificLibraries>
                         </nativeMethod>
                     </mappings>
-                    <params dataType="Function" name="callback" />
+                    <params dataType="Function" name="onSuccess" />
+                    <params dataType="Function" name="onCancelled" />
+                    <params dataType="Function" name="onFailure" />
+                    <params dataType="Object" name="config" />
                     <returnTypes>void</returnTypes>
                 </jsMethods>
                 <mappings platformId="8">

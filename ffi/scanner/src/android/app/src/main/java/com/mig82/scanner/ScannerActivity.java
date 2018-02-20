@@ -22,6 +22,8 @@ import com.google.zxing.client.android.CaptureActivity;
 import com.google.zxing.client.android.encode.EncodeActivity;
 import com.google.zxing.client.android.Intents;
 
+import java.util.HashMap;
+
 /**
  * This calls out to the ZXing barcode reader and returns the result.
  *
@@ -59,7 +61,8 @@ public class ScannerActivity extends Activity{
     private JSONArray requestArgs;
 
     //private CallbackContext callbackContext;
-    private Function jsCallback;
+    private Function onSuccess, onCancelled, onFailure;
+    private HashMap<String, String> config;
 
     /**
      * Constructor.
@@ -73,8 +76,17 @@ public class ScannerActivity extends Activity{
 
         Log.i(LOG_TAG, "3. Initializing context and intent for CaptureActivity");
 
-        jsCallback = (Function) getIntent().getExtras().get("jsCallback");
-        Log.i(LOG_TAG, "3.1 jsCallback:" + jsCallback);
+        onSuccess = (Function) getIntent().getExtras().get("onSuccess");
+        Log.i(LOG_TAG, "3.1 onSuccess:" + onSuccess);
+
+        onFailure = (Function) getIntent().getExtras().get("onFailure");
+        Log.i(LOG_TAG, "3.2 onFailure:" + onFailure);
+
+        onCancelled = (Function) getIntent().getExtras().get("onCancelled");
+        Log.i(LOG_TAG, "3.3 onCancelled:" + onCancelled);
+
+        config = (HashMap<String, String>) getIntent().getExtras().get("config");
+        Log.i(LOG_TAG, "3.4 config:" + config);
 
         Intent captureIntent = new Intent(ScannerActivity.this, CaptureActivity.class);
         captureIntent.setAction(Intents.Scan.ACTION);
@@ -161,8 +173,8 @@ public class ScannerActivity extends Activity{
                     Log.i(LOG_TAG, "This should never happen");
                 }
 
-                Log.i(LOG_TAG, "5.2 Invoking jsCallback:" + jsCallback);
-                invokeJsCallback(jsCallback, obj);
+                Log.i(LOG_TAG, "5.2 Invoking onSuccess:" + onSuccess);
+                invokeJsCallback(onSuccess, obj);
                 //finish();
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
@@ -177,12 +189,12 @@ public class ScannerActivity extends Activity{
                 } catch (JSONException e) {
                     Log.i(LOG_TAG, "This should never happen");
                 }
-                invokeJsCallback(jsCallback, obj);
+                invokeJsCallback(onCancelled, obj);
                 //finish();
             }
             else {
                 Log.e(LOG_TAG, "5.C ERROR");
-                invokeJsCallback(jsCallback);
+                invokeJsCallback(onFailure);
                 //finish();
             }
         }
