@@ -52,7 +52,7 @@ public class ScannerActivity extends Activity{
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
 
-    private static final String LOG_TAG = "ScannerActivity";
+    private static final String LOG_TAG = "ScannerFFI";
 
     private String [] permissions = { Manifest.permission.CAMERA };
 
@@ -71,11 +71,14 @@ public class ScannerActivity extends Activity{
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        jsCallback = (Function) getIntent().getExtras().get("jsCallback");
+        Log.i(LOG_TAG, "3. Initializing context and intent for CaptureActivity");
 
-        Intent intent = new Intent(ScannerActivity.this, CaptureActivity.class);
-        intent.setAction(Intents.Scan.ACTION);
-        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        jsCallback = (Function) getIntent().getExtras().get("jsCallback");
+        Log.i(LOG_TAG, "3.1 jsCallback:" + jsCallback);
+
+        Intent captureIntent = new Intent(ScannerActivity.this, CaptureActivity.class);
+        captureIntent.setAction(Intents.Scan.ACTION);
+        captureIntent.addCategory(Intent.CATEGORY_DEFAULT);
 
         // add config as intent extras
         /*if (args.length() > 0) {
@@ -134,16 +137,20 @@ public class ScannerActivity extends Activity{
 
         }*/
 
-        startActivityForResult(intent, SCAN_REQUEST_CODE);
+        Log.i(LOG_TAG, "4. Starting CaptureActivity");
+        startActivityForResult(captureIntent, SCAN_REQUEST_CODE);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
+        Log.i(LOG_TAG, "5. onActivityResult req:" + requestCode + " res:" + resultCode);
+
         if (requestCode == SCAN_REQUEST_CODE) {
 
             if (resultCode == Activity.RESULT_OK) {
 
+                Log.i(LOG_TAG, "5.1 onActivityResult OK");
                 JSONObject obj = new JSONObject();
                 try {
                     obj.put(TEXT, intent.getStringExtra("SCAN_RESULT"));
@@ -154,10 +161,14 @@ public class ScannerActivity extends Activity{
                     Log.i(LOG_TAG, "This should never happen");
                 }
 
+                Log.i(LOG_TAG, "5.2 Invoking jsCallback:" + jsCallback);
                 invokeJsCallback(jsCallback, obj);
-                finish();
+                //finish();
             }
             else if (resultCode == Activity.RESULT_CANCELED) {
+
+                Log.i(LOG_TAG, "5.B CANCELLED");
+
                 JSONObject obj = new JSONObject();
                 try {
                     obj.put(TEXT, "");
@@ -167,12 +178,12 @@ public class ScannerActivity extends Activity{
                     Log.i(LOG_TAG, "This should never happen");
                 }
                 invokeJsCallback(jsCallback, obj);
-                finish();
+                //finish();
             }
             else {
-                Log.e(LOG_TAG, "An error has ocurred while scanning.");
+                Log.e(LOG_TAG, "5.C ERROR");
                 invokeJsCallback(jsCallback);
-                finish();
+                //finish();
             }
         }
     }
@@ -182,6 +193,8 @@ public class ScannerActivity extends Activity{
     }
 
     private void invokeJsCallback(Function jsCallback, Object data){
+
+        Log.i(LOG_TAG, "6. Invoking callback with data:" + data);
         try {
             jsCallback.execute(new Object[]{data});
         }

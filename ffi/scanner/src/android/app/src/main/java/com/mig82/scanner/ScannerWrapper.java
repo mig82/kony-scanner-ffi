@@ -12,14 +12,16 @@ import android.util.Log;
 
 public class ScannerWrapper {
 
-    private static final String LOG_TAG = "ScannerWrapper";
+    private static final String LOG_TAG = "ScannerFFI";
 
     public void scan(Function paramFunction) {
-        Log.i(LOG_TAG, "1. Requesting scan");
 
+        Log.i(LOG_TAG, "1. Initializing context and intent for ScannerActiviry");
         KonyMain localKonyMain = KonyMain.getActivityContext();
         Intent intent = new Intent(localKonyMain, ScannerActivity.class);
         intent.putExtra("jsCallback", paramFunction);
+
+        Log.i(LOG_TAG, "2. Starting ScannerActiviry");
         localKonyMain.startActivity(intent);
     }
 }

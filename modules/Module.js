@@ -1,16 +1,17 @@
 
 var onScanSuccess = function(data){
-  	alert(2);
-  	alert(data);
+  	kony.print("onScanSuccess!");
+  	kony.print("data: " + data);
 };
 
 var scan = function(/*event*/){
-  	alert(1);
+  	kony.print("scan");
   	var myScanner = new scanner.Scanner();
-  	alert(myScanner);
-  	alert(myScanner.scan);
+  	kony.printlert(myScanner);
+  	kony.print(myScanner.scan);
 	//Invokes method 'scan' on the object
 	myScanner.scan(onScanSuccess);
+  	kony.print("scan end");
 };
 
 //homeFrm.scanBtn.onClick(scan);
