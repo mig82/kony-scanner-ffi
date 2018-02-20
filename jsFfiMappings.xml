@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <javaScriptFFIContainer>
-        <namespaces name="scanner" />
+        <namespaces name="scanner">
+            <jsClasses>
+                <constructors/>
+                <jsMethods name="scan">
+                    <mappings platformId="8">
+                        <nativeMethod className="ScannerWrapper" frameworks="" library="" name="scan" packageName="" static="false">
+                            <params dataType="com.konylabs.vm.Function" />
+                            <returnTypes>void</returnTypes>
+                            <versionSpecificLibraries>
+                                <entry>
+                                    <key>5.0</key>
+                                </entry>
+                                <entry>
+                                    <key>6.0</key>
+                                </entry>
+                            </versionSpecificLibraries>
+                        </nativeMethod>
+                    </mappings>
+                    <params dataType="Function" name="callback" />
+                    <returnTypes>void</returnTypes>
+                </jsMethods>
+                <mappings platformId="8">
+                    <nativeClasses frameworks="" library="scanner.jar" name="ScannerWrapper" packageName="com.mig82.scanner">
+                        <constructors constructor="true" name="ScannerWrapper" static="true" />
+                        <versionSpecificLibraries>
+                            <entry>
+                                <key>5.0</key>
+                            </entry>
+                            <entry>
+                                <key>6.0</key>
+                            </entry>
+                        </versionSpecificLibraries>
+                    </nativeClasses>
+                </mappings>
+                <name>Scanner</name>
+            </jsClasses>
+        </namespaces>
     </javaScriptFFIContainer>
