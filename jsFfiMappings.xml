@@ -9,7 +9,16 @@
                             <params dataType="com.konylabs.vm.Function" />
                             <params dataType="com.konylabs.vm.Function" />
                             <params dataType="com.konylabs.vm.Function" />
-                            <params dataType="java.lang.Object" />
+                            <params dataType="java.lang.String" />
+                            <params dataType="boolean" />
+                            <params dataType="boolean" />
+                            <params dataType="boolean" />
+                            <params dataType="boolean" />
+                            <params dataType="java.lang.String" />
+                            <params dataType="int" />
+                            <params dataType="java.lang.String" />
+                            <params dataType="boolean" />
+                            <params dataType="boolean" />
                             <versionSpecificLibraries>
                                 <entry>
                                     <key>5.0</key>
@@ -23,7 +32,16 @@
                     <params dataType="Function" name="onSuccess" />
                     <params dataType="Function" name="onCancelled" />
                     <params dataType="Function" name="onFailure" />
-                    <params dataType="Object" name="config" />
+                    <params dataType="String" name="formats" />
+                    <params dataType="Boolean" name="preferFrontCamera" />
+                    <params dataType="Boolean" name="showFlipCameraButton" />
+                    <params dataType="Boolean" name="showTorchButton" />
+                    <params dataType="Boolean" name="torchOn" />
+                    <params dataType="String" name="promptMessage" />
+                    <params dataType="Number" name="resultDisplayDuration" />
+                    <params dataType="String" name="orientation" />
+                    <params dataType="Boolean" name="beepOnScan" />
+                    <params dataType="Boolean" name="saveHistory" />
                     <returnTypes>void</returnTypes>
                 </jsMethods>
                 <mappings platformId="8">
